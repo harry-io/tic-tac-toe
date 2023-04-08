@@ -2,11 +2,7 @@ import axios from "axios";
 import React, { Dispatch, SetStateAction, useState } from "react";
 import Cookies from "universal-cookie";
 
-const Login = ({
-  setIsAuth,
-}: {
-  setIsAuth: () => Dispatch<SetStateAction<boolean>>;
-}) => {
+const Login = ({setIsAuth}:{setIsAuth: (text:boolean) => Dispatch<SetStateAction<boolean>>;}) => {
   const cookies = new Cookies();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

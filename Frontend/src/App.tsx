@@ -2,6 +2,8 @@ import Game from "./pages/Games";
 import Start from "./pages/Start";
 import Finished from "./pages/Finished";
 import useTickTackToe from "./hooks/useTicTacToe";
+import Login from "./pages/Login/Login";
+
 
 
 const App = () => {
@@ -9,6 +11,7 @@ const App = () => {
   return (
     
     <div className="flex justify-center">
+      
       {game.status === "created" && <Start handleStart={game.handleStart} />}
       {game.status === "finished" && (
         <Finished name={game.winner} restart={game.handleRestart} />
@@ -16,6 +19,8 @@ const App = () => {
       {game.status === "started" && (
         <Game board={game.board} handleClick={game.handleClick} />
       )}
+
+      
     </div>
   );
 };
