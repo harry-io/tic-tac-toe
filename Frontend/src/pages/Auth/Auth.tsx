@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import { StreamChat } from "stream-chat";
 import Cookies from "universal-cookie/cjs/Cookies";
 import Login from "../Login/Login";
