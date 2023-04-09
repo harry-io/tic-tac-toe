@@ -16,9 +16,10 @@ const Signup = () => {
       cookies.set("token_tic-tac", token);
       cookies.set("userId_tic-tac", userId);
       cookies.set("username_tic-tac", username);
-      cookies.set("firstname_tic-tac", firstName);
-      cookies.set("lastname_tic-tac", lastName);
+      cookies.set("firstName_tic-tac", firstName);
+      cookies.set("lastName_tic-tac", lastName);
       cookies.set("hashedPassword_tic-tac", hashedPassword);
+      cookies.set("isAuth_tic-tac", true);
     });
   };
   return (
