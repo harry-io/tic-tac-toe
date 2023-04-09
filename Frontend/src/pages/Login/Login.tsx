@@ -5,7 +5,7 @@ import Cookies from "universal-cookie";
 const Login = ({
   setIsAuth,
 }: {
-  setIsAuth: () => Dispatch<SetStateAction<boolean>>;
+  setIsAuth: Dispatch<SetStateAction<boolean>>;
 }) => {
   const cookies = new Cookies();
   const [username, setUsername] = useState("");
@@ -26,7 +26,7 @@ const Login = ({
         cookies.set("username_tic-tac", username);
         cookies.set("firstname_tic-tac", firstName);
         cookies.set("lastname_tic-tac", lastName);
-        setIsAuth(true);
+        setIsAuth(false);
       });
   };
   return (

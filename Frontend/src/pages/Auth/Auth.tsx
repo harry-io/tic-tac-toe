@@ -3,6 +3,12 @@ import { StreamChat } from "stream-chat";
 import Cookies from "universal-cookie/cjs/Cookies";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
+
+// interface auth{
+//   setIsAuth: () => Dispatch<SetStateAction<boolean>>
+// }
+
+
 //
 function Auth() {
   //
