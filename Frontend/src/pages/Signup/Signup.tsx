@@ -2,33 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 //
-interface UserType {
-  token: string;
-  userId: string;
-  firstName: string;
-  lastName: string;
-  hashedPassword: string;
-  username: string;
-}
-const initValue = {
-  token: "",
-  userId: "",
-  firstName: "",
-  lastName: "",
-  hashedPassword: "",
-  username: "string",
-};
-//
 const Signup = () => {
   const cookies = new Cookies();
-  const [user, setUser] = useState<UserType>({
-    token: "",
-    userId: "",
-    firstName: "",
-    lastName: "",
-    hashedPassword: "",
-    username: "string",
-  });
+  const [user, setUser] = useState({});
   //
   const handleSignup = () => {
     axios.post("http://localhost:3001/signup", user).then((res) => {
@@ -40,9 +16,10 @@ const Signup = () => {
       cookies.set("token_tic-tac", token);
       cookies.set("userId_tic-tac", userId);
       cookies.set("username_tic-tac", username);
-      cookies.set("firstname_tic-tac", firstName);
-      cookies.set("lastname_tic-tac", lastName);
+      cookies.set("firstName_tic-tac", firstName);
+      cookies.set("lastName_tic-tac", lastName);
       cookies.set("hashedPassword_tic-tac", hashedPassword);
+      cookies.set("isAuth_tic-tac", true);
     });
   };
   return (
