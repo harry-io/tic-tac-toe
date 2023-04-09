@@ -4,14 +4,17 @@ import Cookies from "universal-cookie";
 //
 const Signup = () => {
   const cookies = new Cookies();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+  });
   //
   const handleSignup = () => {
     axios.post("http://localhost:3001/signup", user).then((res) => {
       const { token, userId, firstName, lastName, username, hashedPassword } =
         res.data;
-      //
-      console.log(res.data);
       //
       cookies.set("token_tic-tac", token);
       cookies.set("userId_tic-tac", userId);
