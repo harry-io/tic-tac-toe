@@ -3,10 +3,24 @@ import "./App.css";
 import { StreamChat } from "stream-chat";
 import { Chat } from "stream-chat-react";
 import Cookies from "universal-cookie/cjs/Cookies";
-import Signup from "./Components/Signup/Signup";
-import axios from "axios";
+import Signup from "../Signup/Signup";
+import axios, { AxiosResponse } from "axios";
 
-import JoinGame from "./Components/Game/JoinGame";
+import JoinGame from "../../Component/Game/JoinGame";
+//
+//
+//
+
+interface ServerData {
+  firstName: string;
+  lastName: string;
+  username: string;
+  token: string;
+  userId: string;
+  password: string;
+}
+
+//
 //
 function Auth() {
   const [username, setUsername] = useState<string>("");
@@ -35,7 +49,7 @@ function Auth() {
   //
   const handleLogin = () => {
     axios
-      .post("http://localhost:3001/login", {
+      .post<ServerData>("http://localhost:3001/login", {
         username,
         password,
       })
